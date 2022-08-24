@@ -16,7 +16,7 @@ const login = async (req, res) => {
             id: user._id,
            
         }, "my-test")
-        res.setHeader("x-key", token);
+        res.setHeader("authorization", token);
         return res.status(200).send({ status: true, message: "login successfully", data: token })
     } catch (error) {
         return res.status(500).send({ status: false, message: error.message })
